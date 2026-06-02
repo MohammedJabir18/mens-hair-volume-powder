@@ -206,28 +206,40 @@ function initStickyDrawer() {
 
     if (!drawer || !checkoutBtn) return;
 
-    let isShown = false;
-    let ticking = false;
+    // Use hardware-optimized GSAP ScrollTrigger if available to offload thread operations
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.create({
+            trigger: "#app-root",
+            start: "top -350px", // Fires when main page scrolls past 350px
+            onEnter: () => drawer.classList.add('show'),
+            onLeaveBack: () => drawer.classList.remove('show'),
+            fastScrollEnd: true
+        });
+    } else {
+        // Robust microsecond-throttled scroll fallback
+        let isShown = false;
+        let ticking = false;
 
-    const checkScroll = () => {
-        const shouldShow = window.scrollY > 350;
-        if (shouldShow !== isShown) {
-            isShown = shouldShow;
-            if (isShown) {
-                drawer.classList.add('show');
-            } else {
-                drawer.classList.remove('show');
+        const checkScroll = () => {
+            const shouldShow = window.scrollY > 350;
+            if (shouldShow !== isShown) {
+                isShown = shouldShow;
+                if (isShown) {
+                    drawer.classList.add('show');
+                } else {
+                    drawer.classList.remove('show');
+                }
             }
-        }
-        ticking = false;
-    };
+            ticking = false;
+        };
 
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            window.requestAnimationFrame(checkScroll);
-            ticking = true;
-        }
-    }, { passive: true });
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(checkScroll);
+                ticking = true;
+            }
+        }, { passive: true });
+    }
 
     checkoutBtn.addEventListener('click', () => {
         const bundleId = checkoutBtn.getAttribute('data-active-bundle');
