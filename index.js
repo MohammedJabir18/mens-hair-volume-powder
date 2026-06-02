@@ -497,9 +497,9 @@ function initMediaTheater() {
             updateGallery(galleryIndex + 1);
         });
         
-        // Auto rotate gallery images when Slide 3 is active (keeps gallery alive dynamically!)
+        // Auto rotate gallery images when Slide 1 is active (keeps gallery alive dynamically!)
         setInterval(() => {
-            if (activeIndex === 2) {
+            if (activeIndex === 0) {
                 updateGallery(galleryIndex + 1);
             }
         }, 2500);
