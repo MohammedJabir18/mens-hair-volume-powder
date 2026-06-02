@@ -1,0 +1,14 @@
+# System files
+.DS_Store
+Thumbs.db
+*.log
+
+# Agent & Superpowers directories
+.agents/
+.superpowers/
+.gemini/
+
+# Dependency directories
+node_modules/
+dist/
+build/
