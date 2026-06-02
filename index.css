@@ -83,6 +83,21 @@ body {
     outline-offset: 4px;
 }
 
+/* GPU Compositing promotion to ensure high-performance rendering */
+.main-headline,
+.spec-tile,
+.step-card,
+.compound-card,
+.review-block,
+.evidence-item,
+.faq-item,
+.urgency-cell,
+.cta-content {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
 /* index.css additions */
 .tech-header {
     border-bottom: var(--border-thin);
@@ -1516,6 +1531,30 @@ ol.workflow-steps {
     color: var(--text-muted);
 }
 
+/* Dynamic Aspect Ratios to block CLS Shifts on load */
+.slider-wrapper {
+    aspect-ratio: 4 / 3;
+    height: auto;
+}
+
+.media-theater {
+    aspect-ratio: 4 / 3;
+    height: auto;
+}
+
+.review-photo-frame {
+    aspect-ratio: 1 / 1;
+}
+
+.evidence-frame {
+    aspect-ratio: 1 / 1;
+}
+
+.scan-frame {
+    aspect-ratio: 1 / 1;
+    height: auto;
+}
+
 /* ==========================================================================
    DESKTOP / WIDE VIEW RESPONSIVE LAYOUT (Full fit on desktop, locked on mobile)
    ========================================================================== */
@@ -1593,9 +1632,10 @@ ol.workflow-steps {
         margin-top: 4px;
     }
 
-    .media-theater {
-        height: 100%; /* Fill the vertically stretched container */
-        min-height: 400px; /* Reduced height to fit viewport bounds beautifully */
+    .slider-wrapper, .media-theater {
+        aspect-ratio: auto; /* Reset aspect ratio on desktop */
+        height: 100%;
+        min-height: 400px;
     }
 
     .theater-slide .slider-wrapper {
@@ -1701,6 +1741,7 @@ ol.workflow-steps {
     }
 
     .scan-frame {
+        aspect-ratio: auto;
         height: 380px;
     }
 
