@@ -502,7 +502,7 @@ function initMediaTheater() {
             if (activeIndex === 0) {
                 updateGallery(galleryIndex + 1);
             }
-        }, 2500);
+        }, 5000);
     }
 }
 
