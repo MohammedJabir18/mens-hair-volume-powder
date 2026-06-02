@@ -1,0 +1,585 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALO // ROOT-LOCK Men's Hair Volume Powder</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Live Tech Navigation Header -->
+        <header class="tech-header" role="banner">
+            <nav class="nav-row" aria-label="Main Navigation">
+                <!-- Spaced V A L O Logo -->
+                <span class="brand-text">V A L O</span>
+                
+                <!-- lowercase links -->
+                <div class="nav-links" role="menubar">
+                    <a href="#app-root" class="nav-link" role="menuitem">formula</a>
+                    <a href=".social-proof-section" class="nav-link" role="menuitem">reports</a>
+                    <a href=".faq-section" class="nav-link" role="menuitem">faq</a>
+                </div>
+                
+                <!-- Brutalist buy button (Option A style) -->
+                <button class="btn-brutalist btn-nav-buy" id="nav-buy-trigger">
+                    BUY NOW
+                </button>
+            </nav>
+            <div class="ticker-wrapper" role="region" aria-label="Promotions & Shipping Marquee">
+                <div class="ticker-track">
+                    <span class="ticker-text">FREE U.S. SHIPPING ON ORDERS OVER $40 // DUST IT FOR DENSITY // SECURE CHECKOUT &nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span class="ticker-text" aria-hidden="true">FREE U.S. SHIPPING ON ORDERS OVER $40 // DUST IT FOR DENSITY // SECURE CHECKOUT &nbsp;&nbsp;&nbsp;&nbsp;</span>
+                </div>
+            </div>
+        </header>
+
+        <main id="app-root">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-left-col">
+                    <div class="headline-container">
+                        <span class="tech-mono">[ PRODUCT: ROOT-LOCK // TYPE: VOLUME POWDER ]</span>
+                        <h1 class="main-headline">2X DENSITY.</h1>
+                        <h1 class="main-headline highlight">3 SECONDS.</h1>
+                        <p class="hero-subtext">Weightless micro-minerals coat flat strands, lifting roots instantly. No greasy pomades. No blowdryers. Just raw, touchable volume.</p>
+                    </div>
+
+                    <!-- Above the fold Bundle Selector -->
+                    <div class="bundle-selector-container">
+                        <span class="tech-mono">[ CHOOSE CAPSULE DUO OFFER // INCREASE DENSITY ]</span>
+                        
+                        <div class="bundle-options" role="radiogroup" aria-label="Hair volume powder bundle capsules">
+                            <!-- Bundle 1 -->
+                            <div class="bundle-card" data-bundle="1" data-price="29.99" role="radio" aria-checked="false" tabindex="-1">
+                                <div class="bundle-left">
+                                    <span class="mono-badge">1X PACK</span>
+                                    <h3 class="bundle-title">STANDARD BOTTLE</h3>
+                                    <p class="bundle-desc">Perfect trial size. $4.99 shipping.</p>
+                                </div>
+                                <div class="bundle-right">
+                                    <div class="price">$29.99</div>
+                                </div>
+                            </div>
+
+                            <!-- Bundle 2 (Most Popular) -->
+                            <div class="bundle-card active" data-bundle="2" data-price="49.98" role="radio" aria-checked="true" tabindex="0">
+                                <div class="bundle-ribbon">MOST POPULAR // SAVE $10</div>
+                                <div class="bundle-left">
+                                    <span class="mono-badge crimson">2X PACK</span>
+                                    <h3 class="bundle-title">DOUBLE DENSITY</h3>
+                                    <p class="bundle-desc">Recommended for 24-hr hold. FREE shipping.</p>
+                                </div>
+                                <div class="bundle-right">
+                                    <div class="price">$49.98</div>
+                                </div>
+                            </div>
+
+                            <!-- Bundle 3 -->
+                            <div class="bundle-card" data-bundle="3" data-price="59.97" role="radio" aria-checked="false" tabindex="-1">
+                                <div class="bundle-ribbon black">BUY 2 GET 1 FREE // SAVE $30</div>
+                                <div class="bundle-left">
+                                    <span class="mono-badge">3X PACK</span>
+                                    <h3 class="bundle-title">STYLES SYNDICATE</h3>
+                                    <p class="bundle-desc">Absolute maximum density. FREE shipping.</p>
+                                </div>
+                                <div class="bundle-right">
+                                    <div class="price">$59.97</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn-brutalist btn-hero-checkout" id="hero-checkout-trigger">
+                            ADD SELECT CARD TO BAG // $49.98
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-right-col">
+                    <!-- High-Tech Media Theater -->
+                    <div class="media-theater" id="valo-media-theater">
+                        <!-- Floating HUD Overlay -->
+                        <div class="hud-overlay" aria-hidden="true">
+                            <div class="hud-top-row">
+                                <span class="hud-status">[ STREAMING // LIVE_FEED ]</span>
+                                <span class="hud-rec"><span class="rec-dot"></span>REC</span>
+                            </div>
+                            <div class="hud-bottom-row">
+                                <span class="hud-metrics">X: 104.2 / Y: 89.1</span>
+                                <span class="hud-fps">[ 4K // 60 FPS ]</span>
+                            </div>
+                        </div>
+
+                        <!-- Media Slides Container -->
+                        <div class="theater-slides">
+                            <!-- Slide 1: Interactive Before/After Slider -->
+                            <div class="theater-slide active" data-slide="1">
+                                <div class="slider-wrapper" id="before-after-slider" role="slider" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Before and after hair density comparison slider" tabindex="0">
+                                    <!-- Background: "After" State -->
+                                    <div class="slider-after" style="background-image: url('assets/After.png');">
+                                        <span class="badge badge-after">AFTER // VALO</span>
+                                    </div>
+                                    <!-- Foreground: "Before" State (Clipped) -->
+                                    <div class="slider-before" id="before-image" style="background-image: url('assets/Before.png');">
+                                        <span class="badge badge-before">BEFORE // FLAT</span>
+                                    </div>
+                                    <!-- Sliding Divider Bar -->
+                                    <div class="slider-handle" id="slider-handle">
+                                        <div class="handle-bar"></div>
+                                        <div class="handle-button">
+                                            <span class="tech-mono">&lt;&gt;</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2: Cinematic UGC Active Video Loop -->
+                            <div class="theater-slide" data-slide="2">
+                                <div class="video-wrapper">
+                                    <video id="ugc-video" class="ugc-video-loop" src="assets/video_5.mp4" loop muted playsinline></video>
+                                    <div class="video-play-indicator tech-mono">[ VIDEO: DUSTING_ACTIVE ]</div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3: Premium Product Showcase Macro Renders -->
+                            <div class="theater-slide" data-slide="3">
+                                <div class="product-showcase-gallery">
+                                     <div class="gallery-item active" style="background-image: url('assets/valo_08.png');"></div>
+                                     <div class="gallery-item" style="background-image: url('assets/valo_09.png');"></div>
+                                     <div class="gallery-item" style="background-image: url('assets/valo_10.png');"></div>
+                                     <div class="gallery-item" style="background-image: url('assets/valo_11.png');"></div>
+                                     <div class="gallery-item" style="background-image: url('assets/valo_12.png');"></div>
+                                     <div class="gallery-item" style="background-image: url('assets/valo_13.png');"></div>
+                                     <div class="gallery-item" style="background-image: url('assets/valo_14.png');"></div>
+                                     <div class="gallery-item" style="background-image: url('assets/valo_15.png');"></div>
+                                     <div class="gallery-item" style="background-image: url('assets/valo_16.png');"></div>
+                                     <div class="gallery-item" style="background-image: url('assets/valo_17.png');"></div>
+                                     <div class="gallery-item" style="background-image: url('assets/valo_18.png');"></div>
+                                     <div class="gallery-item" style="background-image: url('assets/valo_19.png');"></div>
+                                     <div class="gallery-item" style="background-image: url('assets/valo_21.png');"></div>
+                                    
+                                    <!-- Gallery Controls -->
+                                    <div class="gallery-arrows">
+                                        <button class="gallery-arrow prev" aria-label="Previous image">&lt;</button>
+                                        <button class="gallery-arrow next" aria-label="Next image">&gt;</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Monospace Switcher Deck -->
+                    <div class="theater-controls" role="tablist" aria-label="Product Media Panels">
+                        <button class="control-tab active" role="tab" aria-selected="true" aria-controls="panel-1" data-target="1">
+                            <span class="tab-index">[ 01 ]</span>
+                            <span class="tab-label">COMPARISON</span>
+                        </button>
+                        <button class="control-tab" role="tab" aria-selected="false" aria-controls="panel-2" data-target="2">
+                            <span class="tab-index">[ 02 ]</span>
+                            <span class="tab-label">ACTIVE_LOOP</span>
+                        </button>
+                        <button class="control-tab" role="tab" aria-selected="false" aria-controls="panel-3" data-target="3">
+                            <span class="tab-index">[ 03 ]</span>
+                            <span class="tab-label">PRODUCT_RENDERS</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Specs and Style Guide -->
+            <section class="funnel-specs-section" aria-label="Product Features and Guidelines">
+                <!-- 2x2 Specs Grid -->
+                <ul class="specs-grid" aria-label="Technical specifications and mechanical benefits">
+                    <li class="spec-tile">
+                        <span class="tech-mono">[ METRIC_01 ]</span>
+                        <h4 class="spec-label">ROOT ELEVATION</h4>
+                        <p class="spec-desc">Micro-mineral particles coat each hair follicle base, creating mechanical friction that locks strands away from the scalp instantly.</p>
+                    </li>
+                    <li class="spec-tile">
+                        <span class="tech-mono">[ METRIC_02 ]</span>
+                        <h4 class="spec-label">MATTE OIL-ABSORB</h4>
+                        <p class="spec-desc">Natural silica silylate extracts absorb grease and sweat directly at the scalp level, leaving a clean, zero-shine dry volume finish.</p>
+                    </li>
+                    <li class="spec-tile">
+                        <span class="tech-mono">[ METRIC_03 ]</span>
+                        <h4 class="spec-label">24-HR HOLD ACTIVE</h4>
+                        <p class="spec-desc">Cross-linking polymers resist external moisture, extreme humidity, wind, and active athletic sweat. Re-styleable on the fly.</p>
+                    </li>
+                    <li class="spec-tile">
+                        <span class="tech-mono">[ METRIC_04 ]</span>
+                        <h4 class="spec-label">ZERO WEIGHT-DOWN</h4>
+                        <p class="spec-desc">Coating particles separate hair fibers without weighing them down. Clays, pomades, and waxes weigh down flat hair—VALO lifts it.</p>
+                    </li>
+                </ul>
+
+                <!-- 3-Step Styling Guide -->
+                <section class="styling-guide-container" aria-labelledby="workflow-heading">
+                    <h4 class="tech-mono" id="workflow-heading">[ WORKFLOW: 3-SECOND HAIR DENSITY ]</h4>
+                    
+                    <ol class="workflow-steps">
+                        <li class="step-card">
+                            <div class="step-num" aria-hidden="true">01.</div>
+                            <div class="step-body">
+                                <h5>TAP & DUST</h5>
+                                <p>Tap a tiny dusting of VALO powder directly onto dry hair roots.</p>
+                            </div>
+                        </li>
+                        <li class="step-card">
+                            <div class="step-num" aria-hidden="true">02.</div>
+                            <div class="step-body">
+                                <h5>RUFFLE & SHAKE</h5>
+                                <p>Run your fingers through your hair to spread the active micro-particles.</p>
+                            </div>
+                        </li>
+                        <li class="step-card">
+                            <div class="step-num" aria-hidden="true">03.</div>
+                            <div class="step-body">
+                                <h5>Instant volume</h5>
+                                <p>Shape into place. Instant 2x density, texture, and all-day lift achieved.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </section>
+            </section>
+
+            <!-- Section 4: Ingredient Science Lab — "WHAT'S INSIDE" -->
+            <section class="science-lab-section" aria-label="Active Ingredients Analysis">
+                <div class="section-header">
+                    <span class="tech-mono">[ COMPOUND_ANALYSIS // ACTIVE INGREDIENTS ]</span>
+                    <h2 class="section-title">WHAT'S INSIDE.</h2>
+                </div>
+                <div class="lab-grid">
+                    <div class="lab-visual">
+                        <div class="scan-frame">
+                            <div class="scan-corner top-left"></div>
+                            <div class="scan-corner top-right"></div>
+                            <div class="scan-corner bottom-left"></div>
+                            <div class="scan-corner bottom-right"></div>
+                            <img src="assets/valo_01.png" alt="VALO Hair Volume Powder product closeup under analysis" class="lab-product-img" loading="lazy">
+                            <div class="scanline" aria-hidden="true"></div>
+                        </div>
+                    </div>
+                    <div class="lab-compounds">
+                        <div class="compound-card">
+                            <span class="compound-formula">SiO₂ // SILICA SILYLATE</span>
+                            <h4 class="compound-name">MICRO-MINERAL MATRIX</h4>
+                            <p class="compound-benefit">Ultrafine silica particles coat individual hair strands at the root, creating friction-based lift that defies gravity without weight.</p>
+                            <div class="purity-bar"><div class="purity-fill" data-purity="97"></div></div>
+                            <span class="tech-mono">PURITY: 97.3%</span>
+                        </div>
+                        <div class="compound-card">
+                            <span class="compound-formula">Al₂Si₂O₅(OH)₄ // KAOLIN CLAY</span>
+                            <h4 class="compound-name">OIL ABSORPTION ENGINE</h4>
+                            <p class="compound-benefit">Natural kaolin micro-particles absorb excess sebum and sweat at the scalp surface, delivering an all-day matte texture finish.</p>
+                            <div class="purity-bar"><div class="purity-fill" data-purity="94"></div></div>
+                            <span class="tech-mono">PURITY: 94.1%</span>
+                        </div>
+                        <div class="compound-card">
+                            <span class="compound-formula">C₃H₃NO // CROSS-LINK POLYMER</span>
+                            <h4 class="compound-name">24-HOUR HOLD BOND</h4>
+                            <p class="compound-benefit">Flexible cross-linking polymers create an invisible scaffolding between strands, locking volume in place through wind, humidity, and movement.</p>
+                            <div class="purity-bar"><div class="purity-fill" data-purity="99"></div></div>
+                            <span class="tech-mono">PURITY: 99.7%</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Social Proof Wall — "FIELD REPORTS" -->
+            <section class="social-proof-section" aria-label="Customer Reviews and Ratings">
+                <div class="section-header">
+                    <span class="tech-mono">[ SIGNAL_INTERCEPT // FIELD REPORTS ]</span>
+                    <h2 class="section-title">VERIFIED REPORTS.</h2>
+                </div>
+                <div class="proof-stats-bar">
+                    <div class="stat-cell">
+                        <span class="stat-value">4.8<span class="stat-unit">/5.0</span></span>
+                        <span class="tech-mono">AVG RATING</span>
+                    </div>
+                    <div class="stat-cell">
+                        <span class="stat-value">2,847</span>
+                        <span class="tech-mono">VERIFIED REVIEWS</span>
+                    </div>
+                    <div class="stat-cell">
+                        <span class="stat-value">94<span class="stat-unit">%</span></span>
+                        <span class="tech-mono">RECOMMEND</span>
+                    </div>
+                </div>
+                <div class="proof-loading tech-mono" aria-hidden="true">LOADING FIELD REPORTS<span class="loading-dots">...</span></div>
+                <div class="proof-feed">
+                    <div class="review-block">
+                        <div class="review-header">
+                            <span class="review-user">[USER // @MARK_T]</span>
+                            <span class="review-stars">★★★★★</span>
+                            <span class="review-badge">[VERIFIED_PURCHASE]</span>
+                        </div>
+                        <p class="review-body">"Finally something that doesn't make my thin hair look like a greasy helmet by noon. Standard clays weigh it down. VALO literally keeps it thick and dry all day."</p>
+                        <div class="review-footer">
+                            <span class="tech-mono">[ FILED: 2 WEEKS AGO // PRODUCT: 2X PACK ]</span>
+                        </div>
+                    </div>
+                    <div class="review-block has-photo">
+                        <div class="review-header">
+                            <span class="review-user">[USER // @JAKE_R]</span>
+                            <span class="review-stars">★★★★★</span>
+                            <span class="review-badge">[VERIFIED_PURCHASE]</span>
+                        </div>
+                        <div class="review-content-row">
+                            <p class="review-body">"My barber asked what product I was using because my hair looked twice as thick. Showed him VALO and he ordered three bottles for his shop. This stuff is insane."</p>
+                            <div class="review-photo-frame">
+                                <img src="assets/image_9.jpg" alt="Customer result photo showing hair volume" class="review-photo" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="review-footer">
+                            <span class="tech-mono">[ FILED: 5 DAYS AGO // PRODUCT: 3X PACK ]</span>
+                        </div>
+                    </div>
+                    <div class="review-block">
+                        <div class="review-header">
+                            <span class="review-user">[USER // @CHRIS_M]</span>
+                            <span class="review-stars">★★★★☆</span>
+                            <span class="review-badge">[VERIFIED_PURCHASE]</span>
+                        </div>
+                        <p class="review-body">"Used to spend 20 minutes with a blow dryer trying to get volume. Now I dust this on in 3 seconds and I'm done. Only reason for 4 stars is I wish the bottle was bigger."</p>
+                        <div class="review-footer">
+                            <span class="tech-mono">[ FILED: 1 MONTH AGO // PRODUCT: 1X PACK ]</span>
+                        </div>
+                    </div>
+                    <div class="review-block">
+                        <div class="review-header">
+                            <span class="review-user">[USER // @DAVID_K]</span>
+                            <span class="review-stars">★★★★★</span>
+                            <span class="review-badge">[VERIFIED_PURCHASE]</span>
+                        </div>
+                        <p class="review-body">"I have super fine Asian hair that goes flat within an hour of styling. VALO is the only product that actually holds volume past lunch. Absolute game changer for thin hair."</p>
+                        <div class="review-footer">
+                            <span class="tech-mono">[ FILED: 3 WEEKS AGO // PRODUCT: 2X PACK ]</span>
+                        </div>
+                    </div>
+                    <div class="review-block">
+                        <div class="review-header">
+                            <span class="review-user">[USER // @ALEX_P]</span>
+                            <span class="review-stars">★★★★★</span>
+                            <span class="review-badge">[VERIFIED_PURCHASE]</span>
+                        </div>
+                        <p class="review-body">"Replaced my entire hair routine with one bottle of VALO. No more mousse, no more texturizing spray, no more hairspray. Just this. Morning routine went from 15 minutes to 30 seconds."</p>
+                        <div class="review-footer">
+                            <span class="tech-mono">[ FILED: 1 WEEK AGO // PRODUCT: 2X PACK ]</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 6: Evidence Gallery — "DOCUMENTED EVIDENCE" -->
+            <section class="evidence-gallery-section" aria-label="Product Results Gallery">
+                <div class="section-header">
+                    <span class="tech-mono">[ EVIDENCE_LOG // DOCUMENTED RESULTS ]</span>
+                    <h2 class="section-title">THE EVIDENCE.</h2>
+                </div>
+                <div class="evidence-grid">
+                    <div class="evidence-item"><div class="evidence-frame">
+                        <div class="frame-corner tl"></div><div class="frame-corner tr"></div><div class="frame-corner bl"></div><div class="frame-corner br"></div>
+                        <img src="assets/valo_01.png" alt="VALO density result specimen 01" class="evidence-img" loading="lazy">
+                        <span class="evidence-caption tech-mono">[ SPECIMEN_01 // DENSITY_ACTIVE ]</span>
+                    </div></div>
+                    <div class="evidence-item"><div class="evidence-frame">
+                        <div class="frame-corner tl"></div><div class="frame-corner tr"></div><div class="frame-corner bl"></div><div class="frame-corner br"></div>
+                        <img src="assets/valo_02.png" alt="VALO texture result specimen 02" class="evidence-img" loading="lazy">
+                        <span class="evidence-caption tech-mono">[ SPECIMEN_02 // TEXTURE_MATRIX ]</span>
+                    </div></div>
+                    <div class="evidence-item"><div class="evidence-frame">
+                        <div class="frame-corner tl"></div><div class="frame-corner tr"></div><div class="frame-corner bl"></div><div class="frame-corner br"></div>
+                        <img src="assets/valo_03.png" alt="VALO root elevation specimen 03" class="evidence-img" loading="lazy">
+                        <span class="evidence-caption tech-mono">[ SPECIMEN_03 // ROOT_ELEVATION ]</span>
+                    </div></div>
+                    <div class="evidence-item"><div class="evidence-frame">
+                        <div class="frame-corner tl"></div><div class="frame-corner tr"></div><div class="frame-corner bl"></div><div class="frame-corner br"></div>
+                        <img src="assets/valo_04.png" alt="VALO hold structure specimen 04" class="evidence-img" loading="lazy">
+                        <span class="evidence-caption tech-mono">[ SPECIMEN_04 // HOLD_STRUCTURE ]</span>
+                    </div></div>
+                    <div class="evidence-item"><div class="evidence-frame">
+                        <div class="frame-corner tl"></div><div class="frame-corner tr"></div><div class="frame-corner bl"></div><div class="frame-corner br"></div>
+                        <img src="assets/valo_05.png" alt="VALO matte finish specimen 05" class="evidence-img" loading="lazy">
+                        <span class="evidence-caption tech-mono">[ SPECIMEN_05 // MATTE_FINISH ]</span>
+                    </div></div>
+                    <div class="evidence-item"><div class="evidence-frame">
+                        <div class="frame-corner tl"></div><div class="frame-corner tr"></div><div class="frame-corner bl"></div><div class="frame-corner br"></div>
+                        <img src="assets/valo_06.png" alt="VALO volume stack specimen 06" class="evidence-img" loading="lazy">
+                        <span class="evidence-caption tech-mono">[ SPECIMEN_06 // VOLUME_STACK ]</span>
+                    </div></div>
+                    <div class="evidence-item"><div class="evidence-frame">
+                        <div class="frame-corner tl"></div><div class="frame-corner tr"></div><div class="frame-corner bl"></div><div class="frame-corner br"></div>
+                        <img src="assets/valo_07.png" alt="VALO fiber coat specimen 07" class="evidence-img" loading="lazy">
+                        <span class="evidence-caption tech-mono">[ SPECIMEN_07 // FIBER_COAT ]</span>
+                    </div></div>
+                    <div class="evidence-item"><div class="evidence-frame">
+                        <div class="frame-corner tl"></div><div class="frame-corner tr"></div><div class="frame-corner bl"></div><div class="frame-corner br"></div>
+                        <img src="assets/valo_20.png" alt="VALO gravity defy specimen 08" class="evidence-img" loading="lazy">
+                        <span class="evidence-caption tech-mono">[ SPECIMEN_08 // GRAVITY_DEFY ]</span>
+                    </div></div>
+                    <div class="evidence-item"><div class="evidence-frame">
+                        <div class="frame-corner tl"></div><div class="frame-corner tr"></div><div class="frame-corner bl"></div><div class="frame-corner br"></div>
+                        <img src="assets/valo_22.png" alt="VALO full deploy specimen 09" class="evidence-img" loading="lazy">
+                        <span class="evidence-caption tech-mono">[ SPECIMEN_09 // FULL_DEPLOY ]</span>
+                    </div></div>
+                </div>
+            </section>
+
+            <!-- Section 7: FAQ — "INTERROGATION PROTOCOL" -->
+            <section class="faq-section" aria-label="Frequently Asked Questions">
+                <div class="section-header">
+                    <span class="tech-mono">[ INTERROGATION_PROTOCOL // COMMON QUERIES ]</span>
+                    <h2 class="section-title">QUESTIONS.</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item" data-faq="1">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+                            <span class="faq-index tech-mono">[ Q-01 ]</span>
+                            <span class="faq-text">Will this work on very thin or thinning hair?</span>
+                            <span class="faq-toggle">[+]</span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-1" role="region" aria-hidden="true">
+                            <p>Absolutely. VALO was specifically engineered for thin and fine hair types. The micro-mineral particles are ultrafine — they coat individual strands without weighing them down, creating friction-based lift at the root level. Users with thinning hair consistently report the most dramatic visual difference.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-faq="2">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+                            <span class="faq-index tech-mono">[ Q-02 ]</span>
+                            <span class="faq-text">How long does one bottle last?</span>
+                            <span class="faq-toggle">[+]</span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-2" role="region" aria-hidden="true">
+                            <p>One bottle lasts 60-90 days with daily use. Because VALO is a concentrated powder, a tiny dusting is all you need per application. Most users find a single bottle lasts 2-3 months of daily styling.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-faq="3">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+                            <span class="faq-index tech-mono">[ Q-03 ]</span>
+                            <span class="faq-text">Is it visible in dark hair? Light hair?</span>
+                            <span class="faq-toggle">[+]</span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-3" role="region" aria-hidden="true">
+                            <p>VALO is completely invisible once applied and worked into the hair. The micro-mineral particles are translucent and colorless. It works equally well on jet black, brown, blonde, and red hair without leaving any white residue or visible powder.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-faq="4">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+                            <span class="faq-index tech-mono">[ Q-04 ]</span>
+                            <span class="faq-text">Does it wash out easily?</span>
+                            <span class="faq-toggle">[+]</span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-4" role="region" aria-hidden="true">
+                            <p>Yes. VALO washes out completely with any standard shampoo in one wash. There is zero product buildup. Unlike heavy waxes and clays that require multiple washes, VALO's mineral particles rinse clean instantly.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-faq="5">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
+                            <span class="faq-index tech-mono">[ Q-05 ]</span>
+                            <span class="faq-text">Will it make my hair look greasy?</span>
+                            <span class="faq-toggle">[+]</span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-5" role="region" aria-hidden="true">
+                            <p>The opposite. VALO actively absorbs oil and moisture at the scalp. It delivers a completely dry, matte texture finish. If your hair gets greasy during the day, VALO actually extends your clean-hair look by absorbing the excess sebum.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-faq="6">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
+                            <span class="faq-index tech-mono">[ Q-06 ]</span>
+                            <span class="faq-text">Can I use it with other styling products?</span>
+                            <span class="faq-toggle">[+]</span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-6" role="region" aria-hidden="true">
+                            <p>Yes. Apply VALO first to dry hair for root volume, then layer any finishing product on top — pomade, clay, spray. VALO creates the foundation of volume and texture; other products add the finishing hold and direction.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-faq="7">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-7">
+                            <span class="faq-index tech-mono">[ Q-07 ]</span>
+                            <span class="faq-text">What's the difference between this and dry shampoo?</span>
+                            <span class="faq-toggle">[+]</span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-7" role="region" aria-hidden="true">
+                            <p>Dry shampoo absorbs oil but adds zero volume or texture. VALO is an engineered volumizing powder that mechanically separates and lifts individual hair strands. Think of dry shampoo as cleanup — VALO is active construction. They solve completely different problems.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 8: Urgency + Trust — "DEPLOYMENT STATUS" -->
+            <section class="urgency-trust-section" aria-label="Stock Status and Trust Guarantees">
+                <div class="urgency-grid">
+                    <div class="urgency-cell">
+                        <span class="urgency-icon"><span class="pulse-dot"></span></span>
+                        <div class="urgency-text">
+                            <span class="urgency-label">STOCK: LIMITED</span>
+                            <span class="urgency-value tech-mono" id="stock-counter">127 UNITS</span>
+                        </div>
+                    </div>
+                    <div class="urgency-cell">
+                        <span class="urgency-icon">⚡</span>
+                        <div class="urgency-text">
+                            <span class="urgency-label">SHIPS IN</span>
+                            <span class="urgency-value tech-mono">24 HOURS</span>
+                        </div>
+                    </div>
+                    <div class="urgency-cell">
+                        <span class="urgency-icon">🔒</span>
+                        <div class="urgency-text">
+                            <span class="urgency-label">ENCRYPTED</span>
+                            <span class="urgency-value tech-mono">256-BIT SSL</span>
+                        </div>
+                    </div>
+                    <div class="urgency-cell">
+                        <span class="urgency-icon">↩️</span>
+                        <div class="urgency-text">
+                            <span class="urgency-label">GUARANTEE</span>
+                            <span class="urgency-value tech-mono">30-DAY RETURN</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 9: Final CTA — "EXECUTE ORDER" -->
+            <section class="final-cta-section" aria-label="Final Purchase Call to Action">
+                <div class="cta-bg-frame" aria-hidden="true">
+                    <img src="assets/hero_product_guy.png" alt="" class="cta-bg-img" loading="lazy">
+                    <div class="cta-scan-overlay"></div>
+                </div>
+                <div class="cta-content">
+                    <span class="tech-mono">[ MISSION_BRIEF // FINAL TRANSMISSION ]</span>
+                    <h2 class="cta-headline" id="final-headline">STOP HIDING THIN HAIR.</h2>
+                    <p class="cta-subtext">Join 2,847+ men who upgraded from flat, lifeless hair to instant, raw volume. Your first bottle ships tomorrow.</p>
+                    <button class="btn-brutalist btn-final-cta" id="final-checkout-btn">
+                        INITIALIZE SECURE CHECKOUT // $49.98
+                    </button>
+                    <div class="cta-trust-row">
+                        <span class="tech-mono">[ 30-DAY GUARANTEE ]</span>
+                        <span class="tech-mono">[ FREE SHIPPING ]</span>
+                        <span class="tech-mono">[ INSTANT DISPATCH ]</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sticky Bottom Sheet Drawer -->
+        <aside class="sticky-footer-drawer" id="sticky-checkout-drawer" role="region" aria-label="Quick Checkout">
+            <div class="drawer-inner">
+                <div class="drawer-left">
+                    <span class="tech-mono">[ ACTIVE SELECTION ]</span>
+                    <div class="drawer-product-info">
+                        <span class="selected-product-title" id="sticky-title-display">VALO DOUBLE DENSITY</span>
+                        <span class="selected-price" id="sticky-price-display">$49.98</span>
+                    </div>
+                </div>
+                <button class="btn-brutalist btn-drawer-checkout" id="sticky-checkout-btn" data-active-bundle="2">
+                    SECURE CHECKOUT
+                </button>
+            </div>
+        </aside>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
