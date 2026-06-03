@@ -1,19 +1,24 @@
 /* index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;900&display=swap');
+
 :root {
-    --bg-dark: #000000;
-    --bg-card: #0D0D0D;
+    --bg-dark: #050505;
+    --bg-card: #0d0d0f;
     --text-light: #FFFFFF;
-    --text-muted: #888888;
-    --electric-crimson: #E11D48;
-    --crimson-hover: #BE123C;
-    --crimson-glow: rgba(225, 29, 72, 0.15);
-    --border-color: #333333;
-    --border-thick: 2px solid #FFFFFF;
+    --text-muted: #a1a1aa;
+    --electric-crimson: #ca8a04; /* Prestige Gold Primary */
+    --crimson-hover: #a16207;   /* Prestige Gold Hover */
+    --crimson-glow: rgba(202, 138, 4, 0.15);
+    --border-color: #27272a;    /* Clean zinc border */
+    --border-thick: 2px solid var(--electric-crimson);
     --border-thin: 1px solid var(--border-color);
-    --font-grotesque: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --font-mono: "Courier New", Courier, monospace;
-    --grid-gap: 12px;
-    --transition-speed: 0.25s;
+    --font-grotesque: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-heading: 'Outfit', system-ui, sans-serif;
+    --font-mono: 'Inter', system-ui, sans-serif; /* Replace monospace font */
+    --grid-gap: 16px;
+    --transition-speed: 0.3s;
+    --border-radius: 12px;
+    --border-radius-sm: 8px;
 }
 
 * {
@@ -31,6 +36,10 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+}
+
 .container {
     width: 100%;
     max-width: 480px; /* Locked mobile viewport */
@@ -39,7 +48,7 @@ body {
     border-left: var(--border-thin);
     border-right: var(--border-thin);
     min-height: 100vh;
-    background: #050505;
+    background: var(--bg-dark);
 }
 
 .tech-mono {
