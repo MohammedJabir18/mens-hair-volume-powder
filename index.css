@@ -225,6 +225,24 @@ body {
 .hero-section {
     padding: 24px 16px;
     border-bottom: var(--border-thin);
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-left-col {
+    display: contents;
+}
+
+.headline-container {
+    order: 1;
+}
+
+.hero-right-col {
+    order: 2;
+}
+
+.bundle-selector-container {
+    order: 3;
 }
 
 .headline-container {
