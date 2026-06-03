@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initFAQAccordion();
     initFinalCTA();
     initNavScroll();
-    initMediaDecryptor();
+    initLazyMedia();
 });
 
 function initDragSlider() {
@@ -643,7 +643,7 @@ function initNavScroll() {
     });
 }
 
-function initMediaDecryptor() {
+function initLazyMedia() {
     // 1. Observe and handle normal image tags
     const imgs = document.querySelectorAll('img.lazy-blur');
     imgs.forEach(img => {
