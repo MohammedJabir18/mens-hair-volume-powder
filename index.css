@@ -95,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
 .main-headline,
 .spec-tile,
 .step-card,
-.compound-card,
+.ingredient-card,
 .review-block,
 .evidence-item,
 .faq-item,
@@ -779,16 +779,18 @@ ol.workflow-steps {
 
 .spec-tile {
     background: var(--bg-card);
-    border: var(--border-thin);
-    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 16px;
 }
 
 .spec-label {
-    font-size: 12px;
-    font-weight: 900;
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 700;
     text-transform: uppercase;
-    margin: 4px 0;
-    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+    color: #fff;
 }
 
 .spec-desc {
@@ -803,40 +805,100 @@ ol.workflow-steps {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    margin-top: 32px;
 }
 
 .workflow-steps {
+    list-style: none;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.ingredients-container {
+    margin-top: 32px;
+}
+
+.ingredients-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.ingredient-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.specs-headline {
+    font-size: 32px;
+    margin-bottom: 20px;
 }
 
 .step-card {
     background: var(--bg-card);
-    border: var(--border-thin);
-    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 16px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
 }
 
 .step-num {
-    font-family: var(--font-mono);
-    font-size: 18px;
+    font-family: var(--font-heading);
+    font-size: 24px;
     font-weight: 900;
     color: var(--electric-crimson);
 }
 
-.step-body h5 {
-    font-size: 11px;
-    font-weight: 900;
+.step-title {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 700;
     text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 2px;
 }
 
-.step-body p {
+.section-title-dtc {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.ingredient-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 16px;
+}
+
+.ingredient-title {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--electric-crimson);
+}
+
+.purity-badge {
     font-size: 11px;
-    color: var(--text-muted);
-    line-height: 1.4;
+    background: rgba(var(--electric-crimson-rgb), 0.1);
+    color: var(--electric-crimson);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 600;
 }
 
 /* Sticky bottom drawer CSS */
@@ -927,153 +989,7 @@ ol.workflow-steps {
     margin-top: 6px;
 }
 
-/* Section 4: Ingredient Science Lab */
-.science-lab-section {
-    padding: 32px 16px;
-    border-bottom: var(--border-thin);
-}
-
-.lab-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.lab-visual {
-    width: 100%;
-}
-
-.scan-frame {
-    position: relative;
-    width: 100%;
-    height: 280px;
-    background: #000;
-    border: 1px solid #1a1a1a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.scan-corner {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    border-color: var(--electric-crimson);
-    border-style: solid;
-    z-index: 5;
-}
-
-.scan-corner.top-left {
-    top: 10px;
-    left: 10px;
-    border-width: 2px 0 0 2px;
-}
-
-.scan-corner.top-right {
-    top: 10px;
-    right: 10px;
-    border-width: 2px 2px 0 0;
-}
-
-.scan-corner.bottom-left {
-    bottom: 10px;
-    left: 10px;
-    border-width: 0 0 2px 2px;
-}
-
-.scan-corner.bottom-right {
-    bottom: 10px;
-    right: 10px;
-    border-width: 0 2px 2px 0;
-}
-
-.lab-product-img {
-    max-height: 90%;
-    max-width: 90%;
-    object-fit: contain;
-    filter: brightness(0.9) contrast(1.1);
-    transition: transform 0.5s ease;
-}
-
-.scan-frame:hover .lab-product-img {
-    transform: scale(1.05);
-}
-
-.scanline {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(to bottom, transparent, var(--electric-crimson), transparent);
-    box-shadow: 0 0 10px var(--electric-crimson);
-    animation: scanline-anim 4s linear infinite;
-    z-index: 3;
-    pointer-events: none;
-}
-
-@keyframes scanline-anim {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(280px); }
-    100% { transform: translateY(0); }
-}
-
-.lab-compounds {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.compound-card {
-    background: var(--bg-card);
-    border: var(--border-thin);
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    transition: border-color var(--transition-speed) ease;
-}
-
-.compound-card:hover {
-    border-color: var(--text-light);
-}
-
-.compound-formula {
-    font-family: var(--font-mono);
-    font-size: 8px;
-    font-weight: bold;
-    color: var(--electric-crimson);
-    letter-spacing: 0.1em;
-}
-
-.compound-name {
-    font-size: 13px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: -0.5px;
-}
-
-.compound-benefit {
-    font-size: 11px;
-    color: var(--text-muted);
-    line-height: 1.4;
-}
-
-.purity-bar {
-    width: 100%;
-    height: 4px;
-    background: #1f1f1f;
-    overflow: hidden;
-    margin: 4px 0 2px 0;
-}
-
-.purity-fill {
-    height: 100%;
-    width: 0; /* Animated */
-    background: var(--electric-crimson);
-    box-shadow: 0 0 8px var(--electric-crimson);
-}
+/* Section 4: Replaced by specifications & ingredients section */
 
 /* Section 5: Social Proof Wall */
 .social-proof-section {
@@ -1767,15 +1683,6 @@ ol.workflow-steps {
         font-size: 20px;
     }
 
-    .step-body h5 {
-        font-size: 11px;
-        margin-bottom: 4px;
-    }
-
-    .step-body p {
-        font-size: 11px;
-    }
-
     .btn-hero-checkout {
         padding: 10px 16px; /* Save vertical height on buttons */
         margin-top: 4px;
@@ -1785,27 +1692,19 @@ ol.workflow-steps {
        6 NEW HIGH-CONVERTING SECTIONS (DESKTOP OVERRIDES)
        ========================================================================== */
 
-    /* Section 4: Ingredient Science Lab Desktop */
-    .science-lab-section {
-        padding: 48px 0;
+    /* Active Ingredients Desktop Overrides */
+    .ingredients-list {
+        flex-direction: row;
+        gap: 12px;
     }
 
-    .lab-grid {
-        display: grid;
-        grid-template-columns: 1fr 1.2fr;
-        gap: 32px;
-        align-items: center;
-    }
-
-    .scan-frame {
-        aspect-ratio: auto;
-        height: 380px;
-    }
-
-    @keyframes scanline-anim {
-        0% { transform: translateY(0); }
-        50% { transform: translateY(380px); }
-        100% { transform: translateY(0); }
+    .ingredient-card {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 16px;
+        min-height: 150px;
     }
 
     /* Section 5: Social Proof Wall Desktop */
