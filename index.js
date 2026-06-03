@@ -512,9 +512,9 @@ function initFAQAccordion() {
     if (!faqItems.length) return;
 
     faqItems.forEach(item => {
-        const questionBtn = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-        const toggleIcon = item.querySelector('.faq-toggle');
+        const questionBtn = item.querySelector('.faq-trigger');
+        const answer = item.querySelector('.faq-content');
+        const toggleIcon = item.querySelector('.faq-icon');
 
         if (!questionBtn || !answer || !toggleIcon) return;
 
@@ -525,16 +525,14 @@ function initFAQAccordion() {
             faqItems.forEach(otherItem => {
                 if (otherItem !== item) {
                     otherItem.classList.remove('active');
-                    const otherBtn = otherItem.querySelector('.faq-question');
-                    const otherAnswer = otherItem.querySelector('.faq-answer');
-                    const otherToggle = otherItem.querySelector('.faq-toggle');
+                    const otherBtn = otherItem.querySelector('.faq-trigger');
+                    const otherAnswer = otherItem.querySelector('.faq-content');
 
                     if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
                     if (otherAnswer) {
                         otherAnswer.setAttribute('aria-hidden', 'true');
                         otherAnswer.style.maxHeight = null;
                     }
-                    if (otherToggle) otherToggle.innerText = '[+]';
                 }
             });
 
@@ -544,13 +542,11 @@ function initFAQAccordion() {
                 questionBtn.setAttribute('aria-expanded', 'false');
                 answer.setAttribute('aria-hidden', 'true');
                 answer.style.maxHeight = null;
-                toggleIcon.innerText = '[+]';
             } else {
                 item.classList.add('active');
                 questionBtn.setAttribute('aria-expanded', 'true');
                 answer.setAttribute('aria-hidden', 'false');
                 answer.style.maxHeight = answer.scrollHeight + 'px';
-                toggleIcon.innerText = '[×]';
             }
         });
     });

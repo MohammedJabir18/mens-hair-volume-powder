@@ -1070,60 +1070,52 @@ ol.workflow-steps {
 .review-block {
     background: var(--bg-card);
     border: var(--border-thin);
-    padding: 16px;
+    border-radius: var(--border-radius);
+    padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    transition: transform var(--transition-speed) ease, border-color var(--transition-speed) ease;
+    transition: transform var(--transition-speed) ease, border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
 .review-block:hover {
-    border-color: var(--text-light);
+    border-color: var(--electric-crimson);
     transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(var(--electric-crimson-rgb), 0.1);
 }
 
 .review-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
     gap: 8px;
 }
 
 .review-user {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    font-weight: bold;
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 600;
     color: var(--text-light);
 }
 
-.review-stars {
+.review-rating {
     color: var(--electric-crimson);
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 2px;
 }
 
-.review-badge {
-    font-family: var(--font-mono);
-    font-size: 8px;
-    color: var(--electric-crimson);
-    background: rgba(225, 29, 72, 0.1);
-    padding: 2px 6px;
-    border: 1px solid rgba(225, 29, 72, 0.2);
-}
-
 .review-body {
-    font-size: 12px;
+    font-size: 13px;
     color: #e5e5e5;
-    line-height: 1.5;
-    font-style: italic;
+    line-height: 1.6;
 }
 
-.review-footer {
-    border-top: var(--border-thin);
-    padding-top: 8px;
-    font-size: 8px;
+.review-meta {
+    font-size: 11px;
     color: var(--text-muted);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 10px;
+    margin-top: 4px;
 }
 
 .review-content-row {
@@ -1140,7 +1132,8 @@ ol.workflow-steps {
     position: relative;
     width: 64px;
     height: 64px;
-    border: 1px solid #222;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
     overflow: hidden;
     flex-shrink: 0;
 }
@@ -1254,19 +1247,31 @@ ol.workflow-steps {
 .faq-list {
     display: flex;
     flex-direction: column;
-    border-top: var(--border-thin);
+    gap: 12px;
 }
 
 .faq-item {
-    border-bottom: var(--border-thin);
+    background: var(--bg-card);
+    border: var(--border-thin);
+    border-radius: var(--border-radius);
     overflow: hidden;
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
-.faq-question {
+.faq-item:hover {
+    border-color: rgba(var(--electric-crimson-rgb), 0.5);
+}
+
+.faq-item.active {
+    border-color: var(--electric-crimson);
+    box-shadow: 0 4px 20px rgba(var(--electric-crimson-rgb), 0.05);
+}
+
+.faq-trigger {
     width: 100%;
     background: transparent;
     border: none;
-    padding: 18px 0;
+    padding: 16px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1277,55 +1282,60 @@ ol.workflow-steps {
     transition: color var(--transition-speed) ease;
 }
 
-.faq-question:hover {
+.faq-trigger:hover {
     color: var(--electric-crimson);
 }
 
-.faq-question:focus-visible {
+.faq-trigger:focus-visible {
     outline: 2px solid var(--electric-crimson);
     outline-offset: -2px;
 }
 
 .faq-index {
-    font-size: 9px;
+    font-size: 10px;
     color: var(--electric-crimson);
     margin-right: 12px;
     flex-shrink: 0;
+    font-family: var(--font-mono);
 }
 
 .faq-text {
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 13px;
+    font-weight: 600;
     flex-grow: 1;
-    line-height: 1.3;
+    line-height: 1.4;
 }
 
-.faq-toggle {
-    font-family: var(--font-mono);
-    font-size: 9px;
+.faq-icon {
+    font-size: 16px;
+    font-weight: 300;
     color: var(--text-muted);
     margin-left: 12px;
     flex-shrink: 0;
-    transition: transform var(--transition-speed) ease;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color var(--transition-speed) ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
 }
 
-.faq-item.active .faq-toggle {
+.faq-item.active .faq-icon {
     color: var(--electric-crimson);
+    transform: rotate(45deg);
 }
 
-.faq-answer {
-    max-height: 0; /* Controlled by JS / CSS transition */
+.faq-content {
+    max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.faq-answer p {
-    font-size: 11px;
+.faq-content p {
+    font-size: 12px;
     color: var(--text-muted);
-    line-height: 1.5;
-    padding: 0 0 16px 20px;
-    border-left: 1px solid var(--electric-crimson);
-    margin-left: 4px;
+    line-height: 1.6;
+    padding: 0 20px 20px 20px;
 }
 
 /* Section 8: Urgency + Trust Signals */
@@ -1745,16 +1755,17 @@ ol.workflow-steps {
         padding: 48px 0;
     }
 
-    .faq-question {
-        padding: 20px 0;
+    .faq-trigger {
+        padding: 20px 24px;
     }
 
     .faq-text {
-        font-size: 13.5px;
+        font-size: 14px;
     }
 
-    .faq-answer p {
-        font-size: 11.5px;
+    .faq-content p {
+        font-size: 12px;
+        padding: 0 24px 24px 24px;
     }
 
     /* Section 8: Urgency + Trust Signals Desktop */
