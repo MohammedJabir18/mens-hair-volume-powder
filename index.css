@@ -561,7 +561,7 @@ body {
 
 .control-tab {
     background: var(--bg-card);
-    border: var(--border-thin) !important; /* Full border on all sides */
+    border: var(--border-thin); /* Full border on all sides */
     color: var(--text-muted);
     font-family: var(--font-mono);
     padding: 8px 10px;
