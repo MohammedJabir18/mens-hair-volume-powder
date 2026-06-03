@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initFAQAccordion();
     initFinalCTA();
     initNavScroll();
+    initMediaDecryptor();
 });
 
 function initDragSlider() {
@@ -643,6 +644,80 @@ function initNavScroll() {
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
+    });
+}
+
+function initMediaDecryptor() {
+    // 1. Observe and handle normal image tags
+    const imgs = document.querySelectorAll('img.lazy-blur');
+    imgs.forEach(img => {
+        const onImgLoad = () => {
+            img.classList.remove('lazy-blur');
+            img.removeEventListener('load', onImgLoad);
+            img.removeEventListener('error', onImgLoad);
+            const parent = img.closest('.loading-active');
+            if (parent) {
+                parent.classList.remove('loading-active');
+            }
+        };
+
+        if (img.complete) {
+            onImgLoad();
+        } else {
+            img.addEventListener('load', onImgLoad, { once: true });
+            img.addEventListener('error', onImgLoad, { once: true });
+        }
+    });
+
+    // 2. Observe and handle background images on gallery items
+    const galleryItems = document.querySelectorAll('.gallery-item.lazy-blur');
+    galleryItems.forEach(item => {
+        const bgImgStyle = item.style.backgroundImage || window.getComputedStyle(item).backgroundImage;
+        if (bgImgStyle && bgImgStyle !== 'none') {
+            const urlMatch = bgImgStyle.match(/url\(['"]?([^'"]+)['"]?\)/);
+            if (urlMatch && urlMatch[1]) {
+                const src = urlMatch[1];
+                const img = new Image();
+                const onBgLoad = () => {
+                    item.classList.remove('lazy-blur');
+                    img.onload = null;
+                    img.onerror = null;
+                };
+                img.onload = onBgLoad;
+                img.onerror = onBgLoad;
+                img.src = src;
+                if (img.complete) {
+                    onBgLoad();
+                }
+            } else {
+                item.classList.remove('lazy-blur');
+            }
+        } else {
+            item.classList.remove('lazy-blur');
+        }
+    });
+
+    // 3. Observe and handle video tags
+    const videos = document.querySelectorAll('video.lazy-blur');
+    videos.forEach(video => {
+        const onVideoLoad = () => {
+            video.classList.remove('lazy-blur');
+            video.removeEventListener('loadeddata', onVideoLoad);
+            video.removeEventListener('canplay', onVideoLoad);
+            video.removeEventListener('error', onVideoLoad);
+            const parent = video.closest('.loading-active');
+            if (parent) {
+                parent.classList.remove('loading-active');
+            }
+        };
+
+        if (video.readyState >= 2) {
+            onVideoLoad();
+        } else {
+            video.addEventListener('loadeddata', onVideoLoad, { once: true });
+            video.addEventListener('canplay', onVideoLoad, { once: true });
+            video.addEventListener('error', onVideoLoad, { once: true });
+        }
     });
 }
 
