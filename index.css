@@ -1607,6 +1607,8 @@ ol.workflow-steps {
 
     .hero-right-col {
         margin-top: 0;
+        display: flex;
+        flex-direction: column;
     }
 
     .hero-left-col {
@@ -1632,10 +1634,16 @@ ol.workflow-steps {
         margin-top: 4px;
     }
 
-    .slider-wrapper, .media-theater {
-        aspect-ratio: auto; /* Reset aspect ratio on desktop */
+    .slider-wrapper {
+        aspect-ratio: auto;
         height: 100%;
+    }
+
+    .media-theater {
+        aspect-ratio: auto;
+        flex: 1;
         min-height: 400px;
+        height: auto;
     }
 
     .theater-slide .slider-wrapper {
@@ -1644,7 +1652,7 @@ ol.workflow-steps {
     }
 
     .theater-controls {
-        margin-bottom: 0;
+        margin-bottom: 32px;
     }
 
     .bundle-selector-container {
