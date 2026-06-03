@@ -1908,6 +1908,7 @@ ol.workflow-steps {
 .gallery-item.lazy-blur::after,
 .scan-frame.loading-active::after,
 .evidence-frame.loading-active::after,
+.video-wrapper.loading-active::after,
 .cta-bg-frame.loading-active::after {
     content: "[ DECRYPTING_ASSETS // METADATA_WAIT ]";
     position: absolute;
@@ -1924,6 +1925,13 @@ ol.workflow-steps {
     z-index: 10;
     pointer-events: none;
     animation: decrypt-blink 1.5s infinite ease-in-out;
+}
+
+/* Prevent text overflow for small grid frames */
+.evidence-frame.loading-active::after {
+    content: "[ DECRYPTING... ]";
+    font-size: 7px;
+    padding: 4px 6px;
 }
 
 
