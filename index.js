@@ -141,7 +141,7 @@ function initBundleSelector() {
         const price = card.getAttribute('data-price');
         const titleEl = card.querySelector('.bundle-title');
         const title = titleEl ? titleEl.innerText : '';
-        checkoutBtn.innerText = `ADD ${title} TO BAG // $${price}`;
+        checkoutBtn.innerText = `ADD ${title} TO BAG • $${price}`;
         
         // Sync with Sticky Drawer if active
         updateStickyFooterState(selectedBundle, price, title);
@@ -570,7 +570,7 @@ function initFinalCTA() {
     }
 
     const syncFinalCTACopy = (price) => {
-        finalBtn.innerText = `INITIALIZE SECURE CHECKOUT // $${price}`;
+        finalBtn.innerText = `INITIALIZE SECURE CHECKOUT • $${price}`;
     };
 
     cards.forEach(card => {
