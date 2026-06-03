@@ -210,7 +210,7 @@ function initStickyDrawer() {
     // Use hardware-optimized GSAP ScrollTrigger if available to offload thread operations
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         ScrollTrigger.create({
-            trigger: "#app-root",
+            trigger: "#main-content",
             start: "top -350px", // Fires when main page scrolls past 350px
             onEnter: () => drawer.classList.add('show'),
             onLeaveBack: () => drawer.classList.remove('show'),
@@ -634,8 +634,8 @@ function initNavScroll() {
             const href = link.getAttribute('href');
             let target = null;
             
-            if (href === '#app-root') {
-                target = document.getElementById('app-root');
+            if (href === '#main-content') {
+                target = document.getElementById('main-content');
             } else {
                 target = document.querySelector(href);
             }
