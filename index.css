@@ -110,8 +110,9 @@ h1, h2, h3, h4, h5, h6 {
 /* index.css additions */
 .tech-header {
     border-bottom: var(--border-thin);
-    background-color: var(--bg-dark);
-    padding: 12px 0 0 0;
+    background-color: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 16px 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -121,15 +122,15 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 16px 8px 16px;
+    padding: 0 16px;
     width: 100%;
 }
 
 .brand-text {
-    font-family: var(--font-grotesque);
-    font-size: 16px;
+    font-family: var(--font-heading);
+    font-size: 20px;
     font-weight: 900;
-    letter-spacing: 0.35em; /* Spaced brand design */
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--text-light);
     cursor: pointer;
@@ -143,60 +144,37 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-link {
-    font-family: var(--font-mono);
-    font-size: 10.5px;
+    font-family: var(--font-grotesque);
+    font-size: 13px;
+    font-weight: 500;
     color: var(--text-muted);
     text-decoration: none;
-    text-transform: lowercase;
-    transition: color var(--transition-speed) ease, text-shadow var(--transition-speed) ease;
+    transition: color var(--transition-speed) ease;
     position: relative;
-    padding: 2px 0;
+    padding: 4px 0;
 }
 
 .nav-link:hover {
     color: var(--electric-crimson);
-    text-shadow: 0 0 4px rgba(225, 29, 72, 0.7); /* Subtle elegant glow */
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: var(--electric-crimson);
-    box-shadow: 0 0 4px var(--electric-crimson);
-    transition: width var(--transition-speed) ease;
-}
-
-.nav-link:hover::after {
-    width: 100%;
 }
 
 .btn-nav-buy {
-    padding: 6px 12px;
-    font-size: 9px;
-    border: 1px solid var(--text-light);
-    box-shadow: 2px 2px 0px var(--text-light);
+    padding: 8px 16px;
+    font-size: 11px;
+    border: 1px solid var(--electric-crimson);
+    border-radius: var(--border-radius-sm);
     background-color: var(--electric-crimson);
-    color: var(--text-light);
-    font-weight: bold;
+    color: #000;
+    font-family: var(--font-heading);
+    font-weight: 700;
     cursor: pointer;
-    transition: background-color var(--transition-speed) ease, 
-                transform var(--transition-speed) ease, 
-                box-shadow var(--transition-speed) ease;
+    transition: all var(--transition-speed) ease;
 }
 
 .btn-nav-buy:hover {
     background-color: var(--crimson-hover);
-    box-shadow: 1px 1px 0px var(--text-light);
-    transform: translate(1px, 1px);
-}
-
-.btn-nav-buy:active {
-    box-shadow: 0px 0px 0px var(--text-light);
-    transform: translate(2px, 2px);
+    border-color: var(--crimson-hover);
+    transform: translateY(-1px);
 }
 
 .ticker-wrapper {

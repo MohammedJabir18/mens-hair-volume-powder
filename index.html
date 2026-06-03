@@ -185,24 +185,18 @@
     </script>
 </head>
 <body>
+    <!-- App Mobile Viewport Container -->
     <div class="container">
-        <!-- Live Tech Navigation Header -->
+        <!-- Navigation Header -->
         <header class="tech-header" role="banner">
             <nav class="nav-row" aria-label="Main Navigation">
-                <!-- Spaced V A L O Logo -->
-                <span class="brand-text">V A L O</span>
-                
-                <!-- lowercase links -->
+                <a href="#" class="brand-text" aria-label="VALO Home" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">VALO</a>
                 <div class="nav-links">
-                    <a href="#whats-inside" class="nav-link">formula</a>
-                    <a href="#social-proof-section" class="nav-link">reports</a>
-                    <a href="#faq-section" class="nav-link">faq</a>
+                    <a href="#formula" class="nav-link">Formula</a>
+                    <a href="#reviews" class="nav-link">Reviews</a>
+                    <a href="#faq" class="nav-link">FAQ</a>
+                    <button id="nav-buy-trigger" class="btn-nav-buy">Order Now</button>
                 </div>
-                
-                <!-- Brutalist buy button (Option A style) -->
-                <button class="btn-brutalist btn-nav-buy" id="nav-buy-trigger">
-                    BUY NOW
-                </button>
             </nav>
             <div class="ticker-wrapper" role="region" aria-label="Promotions & Shipping Marquee">
                 <div class="ticker-track">
@@ -224,7 +218,7 @@
                     </div>
 
                     <!-- Above the fold Bundle Selector -->
-                    <div class="bundle-selector-container">
+                    <div class="bundle-selector-container" id="bundle-selector">
                         <span class="tech-mono">[ CHOOSE CAPSULE DUO OFFER // INCREASE DENSITY ]</span>
                         
                         <div class="bundle-options" role="radiogroup" aria-label="Hair volume powder bundle capsules">
@@ -415,7 +409,7 @@
             </section>
 
             <!-- Section 4: Ingredient Science Lab — "WHAT'S INSIDE" -->
-            <section id="whats-inside" class="science-lab-section" aria-label="Active Ingredients Analysis">
+            <section id="formula" class="science-lab-section" aria-label="Active Ingredients Analysis">
                 <div class="section-header">
                     <span class="tech-mono">[ COMPOUND_ANALYSIS // ACTIVE INGREDIENTS ]</span>
                     <h2 class="section-title">WHAT'S INSIDE.</h2>
@@ -458,7 +452,7 @@
             </section>
 
             <!-- Section 5: Social Proof Wall — "FIELD REPORTS" -->
-            <section class="social-proof-section" id="social-proof-section" aria-label="Customer Reviews and Ratings">
+            <section class="social-proof-section" id="reviews" aria-label="Customer Reviews and Ratings">
                 <div class="section-header">
                     <span class="tech-mono">[ SIGNAL_INTERCEPT // FIELD REPORTS ]</span>
                     <h2 class="section-title">VERIFIED REPORTS.</h2>
@@ -598,7 +592,7 @@
             </section>
 
             <!-- Section 7: FAQ — "INTERROGATION PROTOCOL" -->
-            <section class="faq-section" id="faq-section" aria-label="Frequently Asked Questions">
+            <section class="faq-section" id="faq" aria-label="Frequently Asked Questions">
                 <div class="section-header">
                     <span class="tech-mono">[ INTERROGATION_PROTOCOL // COMMON QUERIES ]</span>
                     <h2 class="section-title">QUESTIONS.</h2>

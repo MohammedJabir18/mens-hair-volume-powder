@@ -618,7 +618,7 @@ function initNavScroll() {
     if (buyBtn) {
         buyBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            const target = document.querySelector('.bundle-selector-container');
+            const target = document.getElementById('bundle-selector');
             if (target) {
                 target.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 // Focus the checkout button for accessibility
