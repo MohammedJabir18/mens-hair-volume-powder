@@ -1875,6 +1875,57 @@ ol.workflow-steps {
     }
 }
 
+/* ==========================================
+   MEDIA DECRYPT LAZY LOADING
+   ========================================== */
+
+@keyframes decrypt-blink {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+.lazy-blur {
+    filter: blur(15px) grayscale(0.3) !important;
+    transform: scale(1.05);
+    opacity: 0.5;
+}
+
+/* Base transitions for all storefront media subject to lazy loading */
+.gallery-item, 
+.lab-product-img, 
+.review-photo, 
+.evidence-img, 
+.cta-bg-img, 
+.theater-slide video {
+    transition: filter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                opacity 0.8s ease;
+    will-change: filter, transform, opacity;
+}
+
+/* Pseudo-element overlays for decrypting HUD indicators */
+.gallery-item.lazy-blur::after,
+.scan-frame.loading-active::after,
+.evidence-frame.loading-active::after,
+.cta-bg-frame.loading-active::after {
+    content: "[ DECRYPTING_ASSETS // METADATA_WAIT ]";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-mono);
+    font-size: 8px;
+    color: var(--electric-crimson);
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--electric-crimson);
+    padding: 6px 12px;
+    letter-spacing: 0.05em;
+    z-index: 10;
+    pointer-events: none;
+    animation: decrypt-blink 1.5s infinite ease-in-out;
+}
+
+
 
 
 
