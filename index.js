@@ -566,7 +566,7 @@ function initFinalCTA() {
     }
 
     const syncFinalCTACopy = (price) => {
-        finalBtn.innerText = `INITIALIZE SECURE CHECKOUT • $${price}`;
+        finalBtn.innerText = `Secure Checkout • $${price}`;
     };
 
     cards.forEach(card => {
