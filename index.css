@@ -22,6 +22,7 @@
     --border-radius-sm: 8px;
     --btn-text: #000000;
     --badge-after-text: #000000;
+    --text-accent: var(--prestige-gold);
 }
 
 @media (prefers-color-scheme: light) {
@@ -31,13 +32,14 @@
         --bg-card-rgb: 255, 255, 255;
         --text-light: #1c1917;
         --text-muted: #78716c;
-        --prestige-gold: #b45309; /* Darker amber-gold for accessibility */
-        --prestige-gold-rgb: 180, 83, 9;
-        --gold-hover: #9a3412;
-        --gold-glow: rgba(var(--prestige-gold-rgb), 0.08);
+        --prestige-gold: #ca8a04; /* Retain original bright gold */
+        --prestige-gold-rgb: 202, 138, 4;
+        --gold-hover: #a16207;
+        --gold-glow: rgba(var(--prestige-gold-rgb), 0.15);
         --border-color: #e7e5e4;
-        --btn-text: #ffffff; /* High contrast text on dark gold button */
-        --badge-after-text: #ffffff;
+        --btn-text: #000000; /* Dark text on bright gold button for contrast */
+        --badge-after-text: #000000;
+        --text-accent: #854d0e; /* Darker bronze-gold for text contrast */
     }
 }
 
@@ -261,7 +263,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--prestige-gold);
+    color: var(--text-accent);
     margin-bottom: 12px;
 }
 
@@ -275,7 +277,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-headline.highlight {
-    color: var(--prestige-gold);
+    color: var(--text-accent);
 }
 
 .hero-subtext {
@@ -607,7 +609,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .tab-index {
     font-size: 8px;
-    color: var(--prestige-gold);
+    color: var(--text-accent);
     font-weight: bold;
 }
 
@@ -699,8 +701,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mono-badge.gold {
-    border-color: var(--prestige-gold);
-    color: var(--prestige-gold);
+    border-color: var(--text-accent);
+    color: var(--text-accent);
 }
 
 .bundle-title {
@@ -828,7 +830,7 @@ ol.workflow-steps {
     font-family: var(--font-heading);
     font-size: 24px;
     font-weight: 900;
-    color: var(--prestige-gold);
+    color: var(--text-accent);
 }
 
 .step-title {
@@ -861,13 +863,13 @@ ol.workflow-steps {
     font-family: var(--font-heading);
     font-size: 16px;
     font-weight: 700;
-    color: var(--prestige-gold);
+    color: var(--text-accent);
 }
 
 .purity-badge {
     font-size: 11px;
     background: rgba(var(--prestige-gold-rgb), 0.1);
-    color: var(--prestige-gold);
+    color: var(--text-accent);
     padding: 2px 8px;
     border-radius: 12px;
     font-weight: 600;
@@ -924,7 +926,7 @@ ol.workflow-steps {
     font-family: var(--font-grotesque);
     font-size: 14px;
     font-weight: bold;
-    color: var(--prestige-gold);
+    color: var(--text-accent);
 }
 
 .btn-drawer-checkout {
@@ -1009,7 +1011,7 @@ ol.workflow-steps {
     font-size: 9px;
     text-transform: uppercase;
     text-align: center;
-    color: var(--prestige-gold);
+    color: var(--text-accent);
     margin-bottom: 16px;
     animation: pulse 1.5s ease-in-out infinite;
 }
@@ -1071,7 +1073,7 @@ ol.workflow-steps {
 }
 
 .review-rating {
-    color: var(--prestige-gold);
+    color: var(--text-accent);
     font-size: 12px;
     letter-spacing: 2px;
 }
@@ -1246,7 +1248,7 @@ ol.workflow-steps {
 
 .faq-index {
     font-size: 10px;
-    color: var(--prestige-gold);
+    color: var(--text-accent);
     margin-right: 12px;
     flex-shrink: 0;
     font-family: var(--font-grotesque);
@@ -1289,6 +1291,7 @@ ol.workflow-steps {
     color: var(--text-muted);
     line-height: 1.6;
     padding: 0 20px 20px 20px;
+    font-weight: 500;
 }
 
 /* Section 8: Urgency + Trust Signals */
@@ -1719,6 +1722,7 @@ ol.workflow-steps {
     .faq-content p {
         font-size: 12px;
         padding: 0 24px 24px 24px;
+        font-weight: 500;
     }
 
     /* Section 8: Urgency + Trust Signals Desktop */
@@ -1825,6 +1829,106 @@ ol.workflow-steps {
     content: "LOADING...";
     font-size: 7px;
     padding: 4px 6px;
+}
+
+/* ==========================================
+   SITE FOOTER STYLING
+   ========================================== */
+.site-footer {
+    padding: 48px 16px 110px 16px; /* High bottom padding for mobile drawer clearance */
+    border-top: var(--border-thin);
+    background: var(--bg-dark);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.footer-brand-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-brand {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    cursor: pointer;
+    user-select: none;
+    width: fit-content;
+}
+
+.footer-tagline {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-title {
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-light);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-link, .footer-link-static {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+.footer-link:hover {
+    color: var(--text-accent);
+}
+
+.footer-link-static {
+    cursor: default;
+}
+
+.footer-bottom {
+    border-top: var(--border-thin);
+    padding-top: 16px;
+    margin-top: 8px;
+}
+
+.footer-copyright {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* Adjust footer padding on desktops since quick checkout drawer is hidden */
+@media (min-width: 1024px) {
+    .site-footer {
+        padding-bottom: 48px;
+    }
 }
 
 
