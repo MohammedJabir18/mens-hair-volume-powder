@@ -218,7 +218,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-size: 10px;
     font-weight: 700;
-    color: #000;
+    color: var(--btn-text);
     letter-spacing: 0.05em;
 }
 
@@ -338,15 +338,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .badge-before {
     left: 12px;
-    background: rgba(13, 13, 15, 0.85);
+    background: rgba(var(--bg-card-rgb), 0.85);
     color: var(--text-light);
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: var(--border-color);
 }
 
 .badge-after {
     right: 12px;
     background: rgba(var(--prestige-gold-rgb), 0.9);
-    color: #000;
+    color: var(--badge-after-text);
     border-color: var(--prestige-gold);
     box-shadow: 0 4px 12px var(--gold-glow);
 }
