@@ -597,7 +597,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .control-tab.active {
-    color: #000;
+    color: var(--btn-text);
     background: var(--prestige-gold);
     border-color: var(--prestige-gold);
     box-shadow: 0 0 15px var(--gold-glow), 0 4px 12px rgba(var(--prestige-gold-rgb), 0.3);
@@ -665,7 +665,7 @@ h1, h2, h3, h4, h5, h6 {
     top: -10px;
     right: 16px;
     background: var(--prestige-gold);
-    color: #000;
+    color: var(--btn-text);
     font-family: var(--font-heading);
     font-size: 9px;
     font-weight: 700;
@@ -676,7 +676,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .bundle-ribbon.black {
     background: var(--text-light);
-    color: #000;
+    color: var(--bg-dark);
 }
 
 .bundle-left {
@@ -707,7 +707,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-size: 15px;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-light);
 }
 
 .bundle-desc {
@@ -720,7 +720,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-size: 18px;
     font-weight: 900;
-    color: #fff;
+    color: var(--text-light);
 }
 
 .btn-hero-checkout {
@@ -762,7 +762,7 @@ ol.workflow-steps {
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 4px;
-    color: #fff;
+    color: var(--text-light);
 }
 
 .spec-desc {
@@ -836,7 +836,7 @@ ol.workflow-steps {
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
-    color: #fff;
+    color: var(--text-light);
     margin-bottom: 2px;
 }
 
@@ -847,7 +847,7 @@ ol.workflow-steps {
     text-transform: uppercase;
     margin-top: 4px;
     margin-bottom: 12px;
-    color: #fff;
+    color: var(--text-light);
 }
 
 .ingredient-card {
@@ -1078,14 +1078,14 @@ ol.workflow-steps {
 
 .review-body {
     font-size: 13px;
-    color: #e5e5e5;
+    color: var(--text-light);
     line-height: 1.6;
 }
 
 .review-meta {
     font-size: 11px;
     color: var(--text-muted);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--border-color);
     padding-top: 10px;
     margin-top: 4px;
 }
