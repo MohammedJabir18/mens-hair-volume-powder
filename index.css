@@ -32,14 +32,14 @@
         --bg-card-rgb: 255, 255, 255;
         --text-light: #1c1917;
         --text-muted: #78716c;
-        --prestige-gold: #ca8a04; /* Retain original bright gold */
-        --prestige-gold-rgb: 202, 138, 4;
-        --gold-hover: #a16207;
-        --gold-glow: rgba(var(--prestige-gold-rgb), 0.15);
+        --prestige-gold: #b45309; /* Darker amber-gold for accessibility */
+        --prestige-gold-rgb: 180, 83, 9;
+        --gold-hover: #9a3412;
+        --gold-glow: rgba(var(--prestige-gold-rgb), 0.08);
         --border-color: #e7e5e4;
-        --btn-text: #000000; /* Dark text on bright gold button for contrast */
-        --badge-after-text: #000000;
-        --text-accent: #854d0e; /* Darker bronze-gold for text contrast */
+        --btn-text: #ffffff; /* High contrast text on dark gold button */
+        --badge-after-text: #ffffff;
+        --text-accent: #b45309; /* Set text accent to match the premium amber-gold */
     }
 }
 
