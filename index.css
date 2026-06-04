@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-brutalist {
     background-color: var(--prestige-gold);
-    color: #000;
+    color: var(--btn-text);
     padding: 16px 24px;
     font-family: var(--font-heading);
     font-weight: 900;
@@ -128,7 +128,7 @@ h1, h2, h3, h4, h5, h6 {
 /* index.css additions */
 .tech-header {
     border-bottom: var(--border-thin);
-    background-color: rgba(5, 5, 5, 0.85);
+    background-color: rgba(var(--bg-card-rgb), 0.85);
     backdrop-filter: blur(12px);
     padding: 16px 0;
     position: sticky;
@@ -182,7 +182,7 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid var(--prestige-gold);
     border-radius: var(--border-radius-sm);
     background-color: var(--prestige-gold);
-    color: #000;
+    color: var(--btn-text);
     font-family: var(--font-heading);
     font-weight: 700;
     cursor: pointer;
