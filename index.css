@@ -500,6 +500,23 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     background: #000;
     overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Main canvas area takes up all available space */
+.gallery-main-canvas {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+}
+
+/* Thumbnail strip: hidden on mobile */
+.gallery-thumbnails {
+    display: none;
 }
 
 .gallery-item {
@@ -1584,6 +1601,56 @@ ol.workflow-steps {
     .theater-slide .slider-wrapper {
         border: none;
         height: 100%;
+    }
+
+    /* Desktop: show thumbnail strip beside the gallery canvas */
+    .gallery-thumbnails {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: 64px;
+        flex-shrink: 0;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background: #000;
+        padding: 4px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--prestige-gold) transparent;
+    }
+
+    .gallery-thumbnails::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    .gallery-thumbnails::-webkit-scrollbar-thumb {
+        background: var(--prestige-gold);
+        border-radius: 2px;
+    }
+
+    .gallery-thumb {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        flex-shrink: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        border: 1.5px solid transparent;
+        opacity: 0.55;
+        transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+        border-radius: 2px;
+    }
+
+    .gallery-thumb:hover {
+        opacity: 0.85;
+        transform: scale(1.04);
+    }
+
+    .gallery-thumb.active {
+        opacity: 1;
+        border-color: var(--prestige-gold);
+        box-shadow: 0 0 0 1px var(--prestige-gold);
     }
 
     .theater-controls {

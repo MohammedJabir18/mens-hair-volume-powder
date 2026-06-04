@@ -477,15 +477,40 @@ function initMediaTheater() {
 
     // Gallery Arrows trigger for Slide 3
     const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+    const thumbs = Array.from(document.querySelectorAll('.gallery-thumb'));
+    const thumbStrip = document.querySelector('.gallery-thumbnails');
     const prevBtn = document.querySelector('.gallery-arrow.prev');
     const nextBtn = document.querySelector('.gallery-arrow.next');
     let galleryIndex = 0;
 
     if (galleryItems.length && prevBtn && nextBtn) {
         const updateGallery = (idx) => {
+            // Deactivate old
             galleryItems[galleryIndex].classList.remove('active');
+            if (thumbs[galleryIndex]) thumbs[galleryIndex].classList.remove('active');
+
+            // Update index (wrapping)
             galleryIndex = (idx + galleryItems.length) % galleryItems.length;
+
+            // Activate new
             galleryItems[galleryIndex].classList.add('active');
+            if (thumbs[galleryIndex]) {
+                thumbs[galleryIndex].classList.add('active');
+                // Scroll only the thumbnail strip — NOT the page — to keep active thumb visible
+                if (thumbStrip) {
+                    const thumb = thumbs[galleryIndex];
+                    const stripScrollTop = thumbStrip.scrollTop;
+                    const stripHeight = thumbStrip.clientHeight;
+                    const thumbTop = thumb.offsetTop;
+                    const thumbHeight = thumb.offsetHeight;
+                    // Only adjust if thumb is outside the visible strip window
+                    if (thumbTop < stripScrollTop) {
+                        thumbStrip.scrollTop = thumbTop;
+                    } else if (thumbTop + thumbHeight > stripScrollTop + stripHeight) {
+                        thumbStrip.scrollTop = thumbTop + thumbHeight - stripHeight;
+                    }
+                }
+            }
         };
 
         prevBtn.addEventListener('click', (e) => {
@@ -496,6 +521,15 @@ function initMediaTheater() {
         nextBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             updateGallery(galleryIndex + 1);
+        });
+
+        // Thumbnail click navigation
+        thumbs.forEach((thumb, i) => {
+            thumb.addEventListener('click', () => {
+                if (galleryIndex !== i) {
+                    updateGallery(i);
+                }
+            });
         });
         
         // Auto rotate gallery images when Slide 1 is active (keeps gallery alive dynamically!)
